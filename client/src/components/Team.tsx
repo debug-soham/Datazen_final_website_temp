@@ -476,7 +476,7 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="py-20 md:py-28 bg-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-background relative overflow-hidden"
       ref={containerRef}
     >
       {/* Background pattern */}
@@ -507,7 +507,7 @@ export default function Team() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.span
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-red-50 text-[var(--power-red)] text-sm font-medium"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -521,13 +521,13 @@ export default function Team() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <span className="text-[var(--somaiya-black)]">The Team </span>
+            <span className="text-foreground">The Team </span>
             <span className="text-gradient">Behind </span>
-            <span className="text-[var(--somaiya-black)]">DataZen</span>
+            <span className="text-foreground">DataZen</span>
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -547,21 +547,21 @@ export default function Team() {
         {/* Team Category Selection Menu */}
         <div className="mb-14 max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold">Filter by Team</h3>
+            <h3 className="text-xl font-bold text-foreground">Filter by Team</h3>
             <div className="flex gap-2">
               <button
                 onClick={() => handleScroll("left")}
-                className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center hover:bg-red-100 transition-all border border-red-200"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all border border-primary/20"
                 aria-label="Scroll left"
               >
-                <ChevronLeft className="w-5 h-5 text-red-600" />
+                <ChevronLeft className="w-5 h-5 text-primary" />
               </button>
               <button
                 onClick={() => handleScroll("right")}
-                className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center hover:bg-red-100 transition-all border border-red-200"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all border border-primary/20"
                 aria-label="Scroll right"
               >
-                <ChevronRight className="w-5 h-5 text-red-600" />
+                <ChevronRight className="w-5 h-5 text-primary" />
               </button>
             </div>
           </div>
@@ -667,7 +667,7 @@ export default function Team() {
 
                         {/* Description */}
                         <div className="mb-6">
-                          <p className="text-gray-600 text-sm leading-relaxed italic">
+                          <p className="text-muted-foreground text-sm leading-relaxed italic">
                             "{member.description}"
                           </p>
                         </div>
@@ -678,28 +678,28 @@ export default function Team() {
                             href={member.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-red-50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
+                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
                             aria-label={`${member.name}'s GitHub`}
                           >
-                            <Github className="w-5 h-5 text-gray-600 hover:text-red-600 transition-colors" />
+                            <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                           </a>
                           <a
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
+                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
                             aria-label={`${member.name}'s LinkedIn`}
                           >
-                            <Linkedin className="w-5 h-5 text-gray-600 hover:text-blue-600 transition-colors" />
+                            <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                           </a>
                           <a
                             href={member.instagram}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-pink-50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
+                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
                             aria-label={`${member.name}'s Instagram`}
                           >
-                            <Instagram className="w-5 h-5 text-gray-600 hover:text-pink-600 transition-colors" />
+                            <Instagram className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                           </a>
                         </div>
                       </div>
@@ -721,7 +721,7 @@ export default function Team() {
                   className="nav-button"
                   disabled={isAnimating}
                 >
-                  <ChevronLeft className="w-6 h-6 text-red-600" />
+                  <ChevronLeft className="w-6 h-6 text-primary" />
                 </button>
 
                 <button
@@ -733,7 +733,7 @@ export default function Team() {
                   className="nav-button"
                   disabled={isAnimating}
                 >
-                  <ChevronRight className="w-6 h-6 text-red-600" />
+                  <ChevronRight className="w-6 h-6 text-primary" />
                 </button>
               </div>
             )}
@@ -763,26 +763,26 @@ export default function Team() {
 
         {/* Stats about the team */}
         <motion.div
-          className="mt-28 grid grid-cols-2 md:grid-cols-4 gap-8 text-center bg-slate-50 rounded-xl shadow-sm p-8"
+          className="mt-28 grid grid-cols-2 md:grid-cols-4 gap-8 text-center bg-card rounded-xl shadow-sm p-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div>
-            <p className="text-4xl font-bold text-[var(--power-red)]">30+</p>
-            <p className="text-gray-600 mt-1">Team Members</p>
+            <p className="text-4xl font-bold text-primary">30+</p>
+            <p className="text-muted-foreground mt-1">Team Members</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-[var(--power-red)]">6</p>
-            <p className="text-gray-600 mt-1">Departments</p>
+            <p className="text-4xl font-bold text-primary">6</p>
+            <p className="text-muted-foreground mt-1">Departments</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-[var(--power-red)]">15+</p>
-            <p className="text-gray-600 mt-1">Projects</p>
+            <p className="text-4xl font-bold text-primary">15+</p>
+            <p className="text-muted-foreground mt-1">Projects</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-[var(--power-red)]">5+</p>
-            <p className="text-gray-600 mt-1">Events Per Year</p>
+            <p className="text-4xl font-bold text-primary">5+</p>
+            <p className="text-muted-foreground mt-1">Events Per Year</p>
           </div>
         </motion.div>
       </div>

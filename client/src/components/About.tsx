@@ -159,7 +159,7 @@ export default function About() {
   return (
     <section 
       id="about" 
-      className="py-20 md:py-32 bg-white relative overflow-hidden" 
+      className="py-20 md:py-32 bg-background relative overflow-hidden" 
       ref={containerRef}
     >
       {/* Background data flow pattern */}
@@ -189,7 +189,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.span 
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-red-50 text-[var(--power-red)] text-sm font-medium"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6 }}
@@ -203,13 +203,13 @@ export default function About() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <span className="text-[var(--somaiya-black)]">Pioneering </span>
+            <span className="text-foreground">Pioneering </span>
             <span className="text-gradient">Data Science</span>
-            <span className="text-[var(--somaiya-black)]"> at Somaiya</span>
+            <span className="text-foreground"> at Somaiya</span>
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -235,7 +235,7 @@ export default function About() {
           {cards.map((card, index) => (
             <motion.div 
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-card rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300 transform hover:-translate-y-2"
               variants={cardAnimation}
             >
               <div className="p-8">
@@ -249,9 +249,9 @@ export default function About() {
                   {card.icon}
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-4">{card.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">{card.title}</h3>
                 
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   {card.description}
                 </p>
                 
@@ -277,9 +277,9 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-[var(--somaiya-black)]">Our Focus Areas</h3>
+            <h3 className="text-3xl font-bold mb-6 text-foreground">Our Focus Areas</h3>
             
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               At DataZen, we explore multiple disciplines within data science, equipping students with the tools and knowledge to excel in today's data-driven world.
             </p>
             
@@ -343,7 +343,7 @@ export default function About() {
               {features.map((feature, index) => (
                 <motion.div 
                   key={index}
-                  className="bg-white border border-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-card border border-border p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
@@ -364,8 +364,8 @@ export default function About() {
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm">{feature.description}</p>
+                      <h4 className="text-lg font-semibold mb-2 text-foreground">{feature.title}</h4>
+                      <p className="text-muted-foreground text-sm">{feature.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -375,12 +375,11 @@ export default function About() {
         </motion.div>
       </div>
       
-      {/* Bottom wave divider */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden z-10">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 md:h-24">
           <path 
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-            className="fill-white"
+            className="fill-background"
           ></path>
         </svg>
       </div>
