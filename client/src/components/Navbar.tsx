@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "wouter";
+import { ThemeToggle } from "./ui/theme-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,6 +64,7 @@ export default function Navbar() {
                 <a href="#timeline" className="font-medium hover:text-primary transition-colors">Timeline</a>
                 <a href="#team" className="font-medium hover:text-primary transition-colors">Team</a>
                 {/* <Link href="/resources" className="font-medium hover:text-primary transition-colors">Resources</Link> */}
+                <ThemeToggle />
               </>
             ) : (
               // Other pages navigation
@@ -73,6 +75,7 @@ export default function Navbar() {
                 <Link href="/#timeline" className="font-medium hover:text-primary transition-colors">Timeline</Link>
                 <Link href="/#team" className="font-medium hover:text-primary transition-colors">Team</Link>
                 <Link href="/resources" className={`font-medium transition-colors ${location === '/resources' ? 'text-primary' : 'hover:text-primary'}`}>Resources</Link>
+                <ThemeToggle />
               </>
             )}
           </div>
@@ -140,6 +143,9 @@ export default function Navbar() {
                   >
                     Resources
                   </Link>
+                  <div className="py-2 px-4">
+                    <ThemeToggle />
+                  </div>
                 </>
               ) : (
                 // Other pages mobile navigation
@@ -186,6 +192,9 @@ export default function Navbar() {
                   >
                     Resources
                   </Link>
+                  <div className="py-2 px-4">
+                    <ThemeToggle />
+                  </div>
                 </>
               )}
             </motion.div>

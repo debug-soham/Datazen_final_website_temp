@@ -235,7 +235,7 @@ export default function About() {
           {cards.map((card, index) => (
             <motion.div 
               key={index}
-              className="bg-card rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-card rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300 transform hover:-translate-y-2"
               variants={cardAnimation}
             >
               <div className="p-8">
@@ -343,7 +343,7 @@ export default function About() {
               {features.map((feature, index) => (
                 <motion.div 
                   key={index}
-                  className="bg-card border border-border p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-card border border-border p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow dark:border-border/40"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}

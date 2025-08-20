@@ -126,7 +126,7 @@ export default function Footer() {
   
   return (
     <footer 
-      className="bg-black text-white pt-16 pb-8 relative"
+      className="bg-slate-900 dark:bg-black text-white pt-16 pb-8 relative"
       ref={containerRef}
     >
       {/* Background pattern */}
