@@ -552,8 +552,8 @@ export default function Team() {
                   <span
                     className={`rounded-full text-sm px-2 py-0.5 ml-2 ${
                       selectedCategory === category
-                        ? "bg-white/20"
-                        : "bg-red-100"
+                        ? "bg-white/30 text-white font-bold"
+                        : "bg-primary/20 text-primary font-bold"
                     }`}
                   >
                     {count}

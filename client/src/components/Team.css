@@ -169,6 +169,10 @@
   border: 1px solid hsl(var(--border));
   background-color: hsl(var(--card));
   color: hsl(var(--foreground));
+  min-width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-button.active {
