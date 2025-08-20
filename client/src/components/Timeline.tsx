@@ -82,7 +82,7 @@ export default function Timeline() {
   return (
     <section 
       id="timeline" 
-      className="py-20 md:py-32 bg-white relative" 
+      className="py-20 md:py-32 bg-background relative" 
       ref={containerRef}
     >
       {/* Decorative elements */}
@@ -110,7 +110,7 @@ export default function Timeline() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.span 
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-red-50 text-[var(--power-red)] text-sm font-medium"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-red-50/10 text-[var(--power-red)] text-sm font-medium"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6 }}
@@ -130,7 +130,7 @@ export default function Timeline() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -153,7 +153,7 @@ export default function Timeline() {
               key={index}
               className="vertical-timeline-element--work"
               contentStyle={{ 
-                background: 'white', 
+                background: 'var(--background)', 
                 boxShadow: '0 10px 40px rgba(0, 0, 0, 0.05)', 
                 borderRadius: '12px',
                 border: index % 3 === 0 ? '1px solid var(--power-red)10' :
@@ -161,7 +161,7 @@ export default function Timeline() {
                        '1px solid var(--somaiya-black)10'
               }}
               contentArrowStyle={{ 
-                borderRight: '10px solid white' 
+                borderRight: '10px solid var(--background)' 
               }}
               date={
                 <span className="text-gradient font-semibold text-lg md:text-xl">
@@ -173,13 +173,13 @@ export default function Timeline() {
                            index % 3 === 1 ? 'var(--vitality-red)' :
                            'var(--somaiya-black)', 
                 color: '#fff',
-                boxShadow: '0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.05)'
+                boxShadow: '0 0 0 4px var(--background), 0 0 0 5px rgba(0,0,0,0.05)'
               }}
               icon={getTimelineIcon(index)}
               visible={true}
             >
               <div className="p-2">
-                <h3 className="text-xl md:text-2xl font-bold text-[var(--somaiya-black)]">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">
                   {item.title}
                 </h3>
                 
@@ -192,7 +192,7 @@ export default function Timeline() {
                   }}
                 />
                 
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function Timeline() {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            box-shadow: 0 0 0 4px white, 0 2px 10px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 0 0 4px var(--background), 0 2px 10px rgba(0,0,0,0.2) !important;
           }
           
           .vertical-timeline-element-icon svg {

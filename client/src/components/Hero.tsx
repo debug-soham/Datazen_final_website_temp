@@ -109,7 +109,7 @@ export default function Hero() {
       ref={ref}
     >
       {/* Background gradient with data grid pattern */}
-      <div className="absolute inset-0 bg-white data-grid"></div>
+      <div className="absolute inset-0 bg-background data-grid"></div>
       
       {/* Animated floating particles */}
       {particles.map(particle => (
@@ -177,12 +177,12 @@ export default function Hero() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               variants={itemVariants}
             >
-              <span className="text-[var(--somaiya-black)]">Data</span>
+              <span className="text-foreground">Data</span>
               <span className="text-gradient">Zen</span>
             </motion.h1>
             
             <motion.p 
-              className="text-lg md:text-xl text-gray-700 max-w-lg"
+              className="text-lg md:text-xl text-muted-foreground max-w-lg"
               variants={itemVariants}
             >
               The official Data Science council of Somaiya Vidyavihar University, where we transform data into insights and create innovations that matter.
@@ -213,7 +213,7 @@ export default function Hero() {
           >
             {/* Abstract data visualization */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-full h-[300px] bg-white/30 backdrop-blur-sm rounded-xl border border-white/20 shadow-2xl overflow-hidden">
+              <div className="relative w-full h-[300px] bg-card/30 backdrop-blur-sm rounded-xl border border-border shadow-2xl overflow-hidden">
                 <DataChart />
                 
                 {/* Decorative UI elements */}
@@ -236,7 +236,7 @@ export default function Hero() {
             
             {/* Floating icons */}
             <motion.div
-              className="absolute top-[-20px] right-[20%] w-14 h-14 bg-white rounded-lg shadow-lg flex items-center justify-center"
+              className="absolute top-[-20px] right-[20%] w-14 h-14 bg-card rounded-lg shadow-lg flex items-center justify-center"
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             >
@@ -246,7 +246,7 @@ export default function Hero() {
             </motion.div>
             
             <motion.div
-              className="absolute bottom-[40px] left-[10%] w-12 h-12 bg-white rounded-lg shadow-lg flex items-center justify-center"
+              className="absolute bottom-[40px] left-[10%] w-12 h-12 bg-card rounded-lg shadow-lg flex items-center justify-center"
               animate={{ y: [0, 15, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
             >
@@ -256,7 +256,7 @@ export default function Hero() {
             </motion.div>
             
             <motion.div
-              className="absolute bottom-[80px] right-[20%] w-10 h-10 bg-white rounded-lg shadow-lg flex items-center justify-center"
+              className="absolute bottom-[80px] right-[20%] w-10 h-10 bg-card rounded-lg shadow-lg flex items-center justify-center"
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
             >
@@ -273,7 +273,7 @@ export default function Hero() {
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 md:h-24">
           <path 
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
-            className="fill-white"
+            className="fill-background"
           ></path>
         </svg>
       </div>

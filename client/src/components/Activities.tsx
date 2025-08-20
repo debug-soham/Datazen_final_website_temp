@@ -264,7 +264,7 @@ export default function Activities() {
   return (
     <section 
       id="activities" 
-      className="py-20 md:py-32 bg-white relative overflow-hidden" 
+      className="py-20 md:py-32 bg-background relative overflow-hidden" 
       ref={containerRef}
     >
       {/* Background pattern */}
@@ -294,7 +294,7 @@ export default function Activities() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.span 
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-red-50 text-[var(--power-red)] text-sm font-medium"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-red-50/10 text-[var(--power-red)] text-sm font-medium"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6 }}
@@ -314,7 +314,7 @@ export default function Activities() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -353,7 +353,7 @@ export default function Activities() {
           {activities.map((activity, index) => (
             <motion.div 
               key={index}
-              className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="bg-card border border-border rounded-xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300"
               variants={cardAnimation}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
             >
@@ -370,7 +370,7 @@ export default function Activities() {
                 
                 <h3 className="text-xl font-bold mb-3">{activity.title}</h3>
                 
-                <p className="text-gray-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   {activity.description}
                 </p>
                 
