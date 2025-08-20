@@ -308,9 +308,9 @@ export default function Activities() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <span className="text-[var(--somaiya-black)]">Our </span>
+            <span className="text-foreground">Our </span>
             <span className="text-gradient">Activities</span>
-            <span className="text-[var(--somaiya-black)]"> & Initiatives</span>
+            <span className="text-foreground"> & Initiatives</span>
           </motion.h2>
           
           <motion.p 

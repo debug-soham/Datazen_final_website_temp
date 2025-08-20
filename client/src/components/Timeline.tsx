@@ -124,9 +124,9 @@ export default function Timeline() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <span className="text-[var(--somaiya-black)]">Events </span>
+            <span className="text-foreground">Events </span>
             <span className="text-gradient">Calendar</span>
-            <span className="text-[var(--somaiya-black)]"> 2024-25</span>
+            <span className="text-foreground"> 2024-25</span>
           </motion.h2>
           
           <motion.p 
