@@ -56,7 +56,7 @@ export default function Timeline() {
     },
     {
       year: "1st and 2nd February 2025",
-      title: "DataThon 2025",
+      title: "Datathon 2026",
       description: "Our flagship 48 hour Data Science and AI/ML based hackathon with a prize pool of over 2 lakhs and a footfall of over 1000 students."
     },
   ];
@@ -156,9 +156,7 @@ export default function Timeline() {
                 background: 'var(--background)', 
                 boxShadow: '0 10px 40px rgba(0, 0, 0, 0.05)', 
                 borderRadius: '12px',
-                border: index % 3 === 0 ? '1px solid var(--power-red)10' :
-                       index % 3 === 1 ? '1px solid var(--vitality-red)10' :
-                       '1px solid var(--somaiya-black)10'
+                border: '1px solid var(--vitality-red)'
               }}
               contentArrowStyle={{ 
                 borderRight: '10px solid var(--background)' 
@@ -169,9 +167,7 @@ export default function Timeline() {
                 </span>
               }
               iconStyle={{ 
-                background: index % 3 === 0 ? 'var(--power-red)' :
-                           index % 3 === 1 ? 'var(--vitality-red)' :
-                           'var(--somaiya-black)', 
+                background: 'var(--vitality-red)',
                 color: '#fff',
                 boxShadow: '0 0 0 4px var(--background), 0 0 0 5px rgba(0,0,0,0.05)'
               }}
@@ -186,9 +182,7 @@ export default function Timeline() {
                 <div 
                   className="h-1 w-12 mt-2 mb-4"
                   style={{ 
-                    background: index % 3 === 0 ? 'var(--power-red)' :
-                              index % 3 === 1 ? 'var(--vitality-red)' :
-                              'var(--somaiya-black)'
+                    background: 'var(--vitality-red)'
                   }}
                 />
                 

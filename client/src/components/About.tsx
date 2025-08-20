@@ -61,7 +61,7 @@ export default function About() {
       title: "Our Vision",
       description: "To create a vibrant community of data enthusiasts, fostering innovation and excellence in the field of data science.",
       icon: <Brain size={28} />,
-      color: "var(--power-red)"
+      color: "var(--vitality-red)"
     },
     {
       title: "University Affiliation",
@@ -73,7 +73,7 @@ export default function About() {
       title: "Our Community",
       description: "A diverse network of students, faculty, and industry experts collaborating to advance data science knowledge and applications.",
       icon: <Users size={28} />,
-      color: "var(--somaiya-black)"
+      color: "var(--vitality-red)"
     }
   ];
 
