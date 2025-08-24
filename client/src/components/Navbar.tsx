@@ -63,7 +63,7 @@ export default function Navbar() {
                 <a href="#activities" className="font-medium hover:text-primary transition-colors">Activities</a>
                 <a href="#timeline" className="font-medium hover:text-primary transition-colors">Timeline</a>
                 <a href="#team" className="font-medium hover:text-primary transition-colors">Team</a>
-                {/* <Link href="/resources" className="font-medium hover:text-primary transition-colors">Resources</Link> */}
+                <Link href="/resources" className="font-medium hover:text-primary transition-colors">Resources</Link>
                 <ThemeToggle />
               </>
             ) : (
