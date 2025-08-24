@@ -229,7 +229,7 @@ export default function Activities() {
             >
               <li className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span className="text-white/90">48-hour coding challenge</span>
+                <span className="text-white/90">24-hour coding challenge</span>
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
