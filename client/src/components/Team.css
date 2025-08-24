@@ -165,7 +165,7 @@
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   border: 1px solid hsl(var(--border));
   background-color: hsl(var(--card));
   color: hsl(var(--foreground));
@@ -175,15 +175,14 @@
   align-items: center;
 }
 
+.category-button:hover {
+  background-color: hsl(var(--muted));
+}
+
 .category-button.active {
   background-color: hsl(var(--primary));
   color: white;
   border-color: hsl(var(--primary));
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.dark .category-button.active {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 /* Pagination dots */

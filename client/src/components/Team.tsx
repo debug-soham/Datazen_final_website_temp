@@ -40,7 +40,7 @@ export default function Team() {
     {
       id: 1,
       name: "Mann Shah",
-      role: "Committee Head",
+      role: "Council Head",
       category: "Core",
       description: "Chief of Breaking Things and Fixing Them at 2 AM",
       // photo: "/mann.jpg",
@@ -51,7 +51,7 @@ export default function Team() {
     {
       id: 2,
       name: "Siddharth Chintawar",
-      role: "Committee Head",
+      role: "Council Head",
       category: "Core",
       // photo: "/siddarth.jpg",
       description: "Steering the ship, barely",
@@ -63,7 +63,7 @@ export default function Team() {
       id: 3,
       name: "Shubham Indulkar",
       role: "Tech Head",
-      category: "Technical",
+      category: "Tech",
       description: "Writing code that works… on the second try",
       photo: "/shubham.png",
       github: "https://github.com/Thesilentprogramer",
@@ -74,7 +74,7 @@ export default function Team() {
       id: 4,
       name: "Ishika Bhoyar",
       role: "Tech Member",
-      category: "Technical",
+      category: "Tech",
       description: "Turning ideas into URLs",
       photo: "/ishika.png",
       github: "https://github.com/ishikabhoyar/",
@@ -85,7 +85,7 @@ export default function Team() {
       id: 5,
       name: "Soham Gore",
       role: "Tech Member",
-      category: "Technical",
+      category: "Tech",
       description: "Trained on chaos",
       photo: "/soham.jpg",
       github: "https://github.com/debug-soham",
@@ -96,7 +96,7 @@ export default function Team() {
       id: 6,
       name: "Manas Kolaskar",
       role: "Tech Member",
-      category: "Technical",
+      category: "Tech",
       description: "Fueling curiosity today to engineer AI tomorrow.",
       photo: "/manas.jpg",
       github: "https://github.com/manasscodes",
@@ -107,7 +107,7 @@ export default function Team() {
       id: 7,
       name: "Lakshya Santani",
       role: "Tech Member",
-      category: "Technical",
+      category: "Tech",
       description: "Turning data into decisions",
       photo: "/lakshya.png",
       github: "https://github.com/Lakshyyaaa",
@@ -465,14 +465,14 @@ export default function Team() {
             <div className="flex gap-2">
               <button
                 onClick={() => handleScroll("left")}
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all border border-primary/20"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/15 transition-colors border border-primary/20"
                 aria-label="Scroll left"
               >
                 <ChevronLeft className="w-5 h-5 text-primary" />
               </button>
               <button
                 onClick={() => handleScroll("right")}
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all border border-primary/20"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/15 transition-colors border border-primary/20"
                 aria-label="Scroll right"
               >
                 <ChevronRight className="w-5 h-5 text-primary" />
@@ -575,7 +575,7 @@ export default function Team() {
                             href={member.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
+                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/10 flex items-center justify-center transition-colors duration-200"
                             aria-label={`${member.name}'s GitHub`}
                           >
                             <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
@@ -584,7 +584,7 @@ export default function Team() {
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
+                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/10 flex items-center justify-center transition-colors duration-200"
                             aria-label={`${member.name}'s LinkedIn`}
                           >
                             <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
@@ -593,7 +593,7 @@ export default function Team() {
                             href={member.instagram}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 hover:shadow-md"
+                            className="w-10 h-10 rounded-full bg-secondary hover:bg-primary/10 flex items-center justify-center transition-colors duration-200"
                             aria-label={`${member.name}'s Instagram`}
                           >
                             <Instagram className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />

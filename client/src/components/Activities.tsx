@@ -247,16 +247,10 @@ export default function Activities() {
             
             <motion.button 
               onClick={() => window.open("https://www.datathon2025.com/")}
-              className="bg-white text-[var(--power-red)] font-medium px-6 py-2 rounded-lg shadow-lg transition-all duration-150 ease-in-out flex items-center gap-2"
+              className="bg-white text-[var(--power-red)] font-medium px-6 py-2 rounded-lg shadow-lg transition-all duration-200 ease-in-out flex items-center gap-2 hover:bg-gray-50"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              whileHover={{ 
-                y: -2, 
-                scale: 1.02,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
-                transition: { duration: 0.12, ease: "easeInOut" }
-              }}
               whileTap={{ scale: 0.98 }}
             >
               Learn More <ArrowRight size={16} />
@@ -342,17 +336,7 @@ export default function Activities() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          whileHover={{ 
-            y: -5,
-            scale: 1.01,
-            transition: { duration: 0.15, ease: "easeInOut" }
-          }}
           whileTap={{ scale: 0.98 }}
-          style={{ 
-            willChange: 'transform',
-            backfaceVisibility: 'hidden',
-            transform: 'translateZ(0)'
-          }}
         >
           <div className="h-[450px]">
             <DataVisualization />
@@ -367,37 +351,18 @@ export default function Activities() {
           animate={isInView ? "visible" : "hidden"}
         >
           {activities.map((activity, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              className="bg-card border border-border rounded-xl shadow-sm overflow-hidden transition-shadow duration-150 ease-in-out relative z-20"
+              className="bg-card border border-border rounded-xl shadow-sm overflow-hidden transition-shadow duration-200 ease-in-out relative z-20 hover:shadow-md"
               variants={cardAnimation}
-              whileHover={{ 
-                y: -6, 
-                scale: 1.02,
-                transition: { 
-                  duration: 0.12, 
-                  ease: "easeInOut",
-                  type: "tween"
-                } 
-              }}
               whileTap={{ scale: 0.98 }}
-              style={{ 
-                willChange: 'transform',
-                backfaceVisibility: 'hidden',
-                transform: 'translateZ(0)'
-              }}
             >
               <div className="p-6 h-full">
                 <motion.div 
-                  className="w-12 h-12 rounded-lg mb-6 flex items-center justify-center transition-all duration-150 ease-in-out"
+                  className="w-12 h-12 rounded-lg mb-6 flex items-center justify-center transition-all duration-200 ease-in-out"
                   style={{ 
                     backgroundColor: `${activity.color}10`,
                     color: activity.color 
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    backgroundColor: `${activity.color}20`,
-                    transition: { duration: 0.12, ease: "easeInOut" }
                   }}
                 >
                   {activity.icon}
@@ -440,7 +405,6 @@ export default function Activities() {
           
           {/* <motion.button 
             className="bg-gradient-red text-white font-medium px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all"
-            whileHover={{ y: -3 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >

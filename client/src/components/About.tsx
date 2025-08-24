@@ -315,8 +315,7 @@ export default function About() {
                     return (
                       <motion.div
                         key={i}
-                        className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center"
-                        whileHover={{ scale: 1.05 }}
+                        className="bg-white/10 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center transition-all duration-200 hover:bg-white/20"
                       >
                         <a
                           href={hrefs[key]}
@@ -341,13 +340,12 @@ export default function About() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {features.map((feature, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
-                  className="bg-card border border-border p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow dark:border-border/40"
+                  className="bg-card border border-border p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 dark:border-border/40"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  whileHover={{ y: -5 }}
                 >
                   <div className="flex gap-4 items-start">
                     <div 
