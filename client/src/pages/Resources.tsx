@@ -625,57 +625,56 @@ export default function Resources() {
           </div>
         </section>
 
-        {/* Featured Resources */}
-        {selectedCategory === "All" && !searchTerm && (
-          <section className="py-16">
-            <div className="container mx-auto px-6">
-              <motion.div
-                className="text-center mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  <span className="text-foreground">Featured </span>
-                  <span className="text-gradient">Resources</span>
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Hand-picked resources recommended by our community
-                </p>
-              </motion.div>
-
+        {/* Category-based Resource Sections */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            {/* Books Section */}
+            <motion.div
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-green-500" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground">Books & Publications</h2>
+                  <p className="text-muted-foreground">Essential reading materials and references</p>
+                </div>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {featuredResources.slice(0, 6).map((resource, index) => (
+                {filteredResources.filter(resource => resource.category === "Books").map((resource, index) => (
                   <motion.div
                     key={resource.id}
-                    className="group bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                    className="bg-card rounded-xl p-6 border border-border hover:border-green-500/50 transition-all duration-300 hover:shadow-lg group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                      <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
                         {getResourceIcon(resource.type)}
                       </div>
-                      <Badge variant="secondary" className="text-xs">
-                        {resource.category}
-                      </Badge>
+                      {resource.featured && (
+                        <Badge variant="secondary" className="text-xs">Featured</Badge>
+                      )}
                     </div>
-
-                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-green-500 transition-colors">
                       {resource.title}
                     </h3>
-                    
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                       {resource.description}
                     </p>
-
                     <div className="flex items-center justify-between mb-4">
                       <Badge className={getLevelColor(resource.level)} variant="outline">
                         {resource.level}
                       </Badge>
+                      <span className="text-xs text-muted-foreground">
+                        by {resource.author}
+                      </span>
                     </div>
-
                     <div className="flex flex-wrap gap-1 mb-4">
                       {resource.tags.slice(0, 3).map((tag) => (
                         <Badge key={tag} variant="secondary" className="text-xs">
@@ -683,125 +682,296 @@ export default function Resources() {
                         </Badge>
                       ))}
                     </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">
-                        by {resource.author}
-                      </span>
-                      <Button size="sm" asChild>
-                        <a href={resource.url} target="_blank" rel="noopener noreferrer">
-                          View <ExternalLink className="w-4 h-4 ml-1" />
-                        </a>
-                      </Button>
-                    </div>
+                    <Button size="sm" asChild className="w-full">
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        Read Book <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
+                    </Button>
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </section>
-        )}
-
-        {/* All Resources */}
-        <section className="py-16">
-          <div className="container mx-auto px-6">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-foreground">All </span>
-                <span className="text-gradient">Resources</span>
-              </h2>
             </motion.div>
 
-            {filteredResources.length > 0 ? (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {filteredResources.map((resource, index) => (
+            {/* Datasets Section */}
+            <motion.div
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                  <Database className="w-6 h-6 text-purple-500" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground">Datasets & Data Sources</h2>
+                  <p className="text-muted-foreground">Curated datasets for practice and projects</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredResources.filter(resource => resource.category === "Datasets").map((resource, index) => (
                   <motion.div
                     key={resource.id}
-                    className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                    className="bg-card rounded-xl p-6 border border-border hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.05 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500">
                         {getResourceIcon(resource.type)}
                       </div>
-                      
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-start justify-between mb-2">
-                          <h3 className="font-bold text-lg hover:text-primary transition-colors cursor-pointer">
-                            {resource.title}
-                          </h3>
+                      {resource.featured && (
+                        <Badge variant="secondary" className="text-xs">Featured</Badge>
+                      )}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-purple-500 transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      {resource.description}
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <Badge className={getLevelColor(resource.level)} variant="outline">
+                        {resource.level}
+                      </Badge>
+                      <span className="text-xs text-muted-foreground">
+                        by {resource.author}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {resource.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button size="sm" asChild className="w-full">
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        Access Dataset <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
+                    </Button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Tools Section */}
+            <motion.div
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                  <Code className="w-6 h-6 text-blue-500" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground">Tools & Applications</h2>
+                  <p className="text-muted-foreground">Interactive tools and software for data science</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredResources.filter(resource => resource.category === "Tools").map((resource, index) => (
+                  <motion.div
+                    key={resource.id}
+                    className="bg-card rounded-xl p-6 border border-border hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg group"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
+                        {getResourceIcon(resource.type)}
+                      </div>
+                      {resource.featured && (
+                        <Badge variant="secondary" className="text-xs">Featured</Badge>
+                      )}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      {resource.description}
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <Badge className={getLevelColor(resource.level)} variant="outline">
+                        {resource.level}
+                      </Badge>
+                      <span className="text-xs text-muted-foreground">
+                        by {resource.author}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {resource.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button size="sm" asChild className="w-full">
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        Open Tool <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
+                    </Button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Videos Section */}
+            <motion.div
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center">
+                  <Video className="w-6 h-6 text-red-500" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground">Videos & Tutorials</h2>
+                  <p className="text-muted-foreground">Educational videos and course materials</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredResources.filter(resource => resource.category === "Videos").map((resource, index) => (
+                  <motion.div
+                    key={resource.id}
+                    className="bg-card rounded-xl p-6 border border-border hover:border-red-500/50 transition-all duration-300 hover:shadow-lg group"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500">
+                        {getResourceIcon(resource.type)}
+                      </div>
+                      {resource.featured && (
+                        <Badge variant="secondary" className="text-xs">Featured</Badge>
+                      )}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-red-500 transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      {resource.description}
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <Badge className={getLevelColor(resource.level)} variant="outline">
+                        {resource.level}
+                      </Badge>
+                      <span className="text-xs text-muted-foreground">
+                        by {resource.author}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {resource.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button size="sm" asChild className="w-full">
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        Watch Video <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
+                    </Button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Other Categories */}
+            {["Tutorials", "Courses", "Research Papers", "Competitions"].map((category, categoryIndex) => {
+              const categoryResources = filteredResources.filter(resource => resource.category === category);
+              if (categoryResources.length === 0) return null;
+
+              const categoryColors: { [key: string]: { bg: string; text: string; border: string } } = {
+                "Tutorials": { bg: "bg-orange-500/10", text: "text-orange-500", border: "border-orange-500/50" },
+                "Courses": { bg: "bg-indigo-500/10", text: "text-indigo-500", border: "border-indigo-500/50" },
+                "Research Papers": { bg: "bg-yellow-500/10", text: "text-yellow-500", border: "border-yellow-500/50" },
+                "Competitions": { bg: "bg-pink-500/10", text: "text-pink-500", border: "border-pink-500/50" }
+              };
+
+              const colors = categoryColors[category];
+
+              return (
+                <motion.div
+                  key={category}
+                  className="mb-20"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 + categoryIndex * 0.2 }}
+                >
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center`}>
+                      {category === "Tutorials" && <BookOpen className={`w-6 h-6 ${colors.text}`} />}
+                      {category === "Courses" && <Users className={`w-6 h-6 ${colors.text}`} />}
+                      {category === "Research Papers" && <FileText className={`w-6 h-6 ${colors.text}`} />}
+                      {category === "Competitions" && <Users className={`w-6 h-6 ${colors.text}`} />}
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-bold text-foreground">{category}</h2>
+                      <p className="text-muted-foreground">
+                        {category === "Tutorials" && "Step-by-step learning guides"}
+                        {category === "Courses" && "Structured learning programs"}
+                        {category === "Research Papers" && "Academic papers and research"}
+                        {category === "Competitions" && "Data science challenges and contests"}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {categoryResources.map((resource, index) => (
+                      <motion.div
+                        key={resource.id}
+                        className={`bg-card rounded-xl p-6 border border-border hover:${colors.border} transition-all duration-300 hover:shadow-lg group`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                      >
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center ${colors.text}`}>
+                            {getResourceIcon(resource.type)}
+                          </div>
                           {resource.featured && (
-                            <Badge variant="secondary" className="text-xs ml-2">
-                              Featured
-                            </Badge>
+                            <Badge variant="secondary" className="text-xs">Featured</Badge>
                           )}
                         </div>
-                        
-                        <p className="text-muted-foreground text-sm mb-3">
+                        <h3 className={`font-bold text-lg mb-2 group-hover:${colors.text} transition-colors`}>
+                          {resource.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                           {resource.description}
                         </p>
-
-                        <div className="flex items-center gap-2 mb-3">
-                          <Badge variant="secondary" className="text-xs">
-                            {resource.category}
-                          </Badge>
+                        <div className="flex items-center justify-between mb-4">
                           <Badge className={getLevelColor(resource.level)} variant="outline">
                             {resource.level}
                           </Badge>
+                          <span className="text-xs text-muted-foreground">
+                            by {resource.author}
+                          </span>
                         </div>
-
                         <div className="flex flex-wrap gap-1 mb-4">
-                          {resource.tags.map((tag) => (
+                          {resource.tags.slice(0, 3).map((tag) => (
                             <Badge key={tag} variant="secondary" className="text-xs">
                               {tag}
                             </Badge>
                           ))}
                         </div>
-
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-muted-foreground">
-                            by {resource.author}
-                          </span>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs text-muted-foreground">
-                              Added {new Date(resource.dateAdded).toLocaleDateString()}
-                            </span>
-                            <Button size="sm" asChild>
-                              <a href={resource.url} target="_blank" rel="noopener noreferrer">
-                                View <ExternalLink className="w-4 h-4 ml-1" />
-                              </a>
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-16">
-                <Database className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">No resources found</h3>
-                <p className="text-muted-foreground mb-4">
-                  Try adjusting your search terms or category filter.
-                </p>
-                <Button 
-                  onClick={() => {
-                    setSearchTerm("");
-                    setSelectedCategory("All");
-                  }}
-                  variant="outline"
-                >
-                  Clear Filters
-                </Button>
-              </div>
-            )}
+                        <Button size="sm" asChild className="w-full">
+                          <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                            View Resource <ExternalLink className="w-4 h-4 ml-1" />
+                          </a>
+                        </Button>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </section>
 
