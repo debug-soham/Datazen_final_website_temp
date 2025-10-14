@@ -648,7 +648,7 @@ export default function Resources() {
                 {filteredResources.filter(resource => resource.category === "Books").map((resource, index) => (
                   <motion.div
                     key={resource.id}
-                    className="bg-card rounded-xl p-6 border border-border hover:border-green-500/50 transition-all duration-300 hover:shadow-lg group"
+                    className="bg-card rounded-xl p-6 border border-border hover:border-green-500/50 transition-all duration-300 hover:shadow-lg group flex flex-col h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -664,7 +664,7 @@ export default function Resources() {
                     <h3 className="font-bold text-lg mb-2 group-hover:text-green-500 transition-colors">
                       {resource.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
                       {resource.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
@@ -682,7 +682,7 @@ export default function Resources() {
                         </Badge>
                       ))}
                     </div>
-                    <Button size="sm" asChild className="w-full">
+                    <Button size="sm" asChild className="w-full mt-auto">
                       <a href={resource.url} target="_blank" rel="noopener noreferrer">
                         Read Book <ExternalLink className="w-4 h-4 ml-1" />
                       </a>
@@ -712,7 +712,7 @@ export default function Resources() {
                 {filteredResources.filter(resource => resource.category === "Datasets").map((resource, index) => (
                   <motion.div
                     key={resource.id}
-                    className="bg-card rounded-xl p-6 border border-border hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg group"
+                    className="bg-card rounded-xl p-6 border border-border hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg group flex flex-col h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -728,7 +728,7 @@ export default function Resources() {
                     <h3 className="font-bold text-lg mb-2 group-hover:text-purple-500 transition-colors">
                       {resource.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
                       {resource.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
@@ -746,7 +746,7 @@ export default function Resources() {
                         </Badge>
                       ))}
                     </div>
-                    <Button size="sm" asChild className="w-full">
+                    <Button size="sm" asChild className="w-full mt-auto">
                       <a href={resource.url} target="_blank" rel="noopener noreferrer">
                         Access Dataset <ExternalLink className="w-4 h-4 ml-1" />
                       </a>
@@ -776,7 +776,7 @@ export default function Resources() {
                 {filteredResources.filter(resource => resource.category === "Tools").map((resource, index) => (
                   <motion.div
                     key={resource.id}
-                    className="bg-card rounded-xl p-6 border border-border hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg group"
+                    className="bg-card rounded-xl p-6 border border-border hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg group flex flex-col h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -792,7 +792,7 @@ export default function Resources() {
                     <h3 className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors">
                       {resource.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
                       {resource.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
@@ -810,7 +810,7 @@ export default function Resources() {
                         </Badge>
                       ))}
                     </div>
-                    <Button size="sm" asChild className="w-full">
+                    <Button size="sm" asChild className="w-full mt-auto">
                       <a href={resource.url} target="_blank" rel="noopener noreferrer">
                         Open Tool <ExternalLink className="w-4 h-4 ml-1" />
                       </a>
@@ -840,7 +840,7 @@ export default function Resources() {
                 {filteredResources.filter(resource => resource.category === "Videos").map((resource, index) => (
                   <motion.div
                     key={resource.id}
-                    className="bg-card rounded-xl p-6 border border-border hover:border-red-500/50 transition-all duration-300 hover:shadow-lg group"
+                    className="bg-card rounded-xl p-6 border border-border hover:border-red-500/50 transition-all duration-300 hover:shadow-lg group flex flex-col h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -856,7 +856,7 @@ export default function Resources() {
                     <h3 className="font-bold text-lg mb-2 group-hover:text-red-500 transition-colors">
                       {resource.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
                       {resource.description}
                     </p>
                     <div className="flex items-center justify-between mb-4">
@@ -874,7 +874,7 @@ export default function Resources() {
                         </Badge>
                       ))}
                     </div>
-                    <Button size="sm" asChild className="w-full">
+                    <Button size="sm" asChild className="w-full mt-auto">
                       <a href={resource.url} target="_blank" rel="noopener noreferrer">
                         Watch Video <ExternalLink className="w-4 h-4 ml-1" />
                       </a>
@@ -927,7 +927,7 @@ export default function Resources() {
                     {categoryResources.map((resource, index) => (
                       <motion.div
                         key={resource.id}
-                        className={`bg-card rounded-xl p-6 border border-border hover:${colors.border} transition-all duration-300 hover:shadow-lg group`}
+                        className={`bg-card rounded-xl p-6 border border-border hover:${colors.border} transition-all duration-300 hover:shadow-lg group flex flex-col h-full`}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -943,7 +943,7 @@ export default function Resources() {
                         <h3 className={`font-bold text-lg mb-2 group-hover:${colors.text} transition-colors`}>
                           {resource.title}
                         </h3>
-                        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
                           {resource.description}
                         </p>
                         <div className="flex items-center justify-between mb-4">
@@ -961,7 +961,7 @@ export default function Resources() {
                             </Badge>
                           ))}
                         </div>
-                        <Button size="sm" asChild className="w-full">
+                        <Button size="sm" asChild className="w-full mt-auto">
                           <a href={resource.url} target="_blank" rel="noopener noreferrer">
                             View Resource <ExternalLink className="w-4 h-4 ml-1" />
                           </a>
