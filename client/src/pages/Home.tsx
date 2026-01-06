@@ -116,7 +116,7 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <p className="text-sm text-muted-foreground mt-5">Team size: 2 to 3 members | Prize Pool: ₹10,000 + Certificates</p>
+                <p className="text-sm text-muted-foreground mt-5">Team size: 2 to 3 members | Prize Pool: ₹50,000 + Certificates</p>
               </div>
             </motion.div>
           </div>
