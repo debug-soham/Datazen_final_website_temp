@@ -26,6 +26,16 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
+  server: {
+    host: "0.0.0.0",
+    proxy: {
+      "/api": {
+        target: "http://0.0.0.0:5001",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
