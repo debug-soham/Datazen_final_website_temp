@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const controls = useAnimation();
@@ -167,43 +169,59 @@ export default function Hero() {
             variants={itemVariants}
           >
             <motion.div
-              className="inline-block py-1 px-3 rounded-full border border-[var(--power-red)] text-[var(--power-red)] text-sm font-medium"
+              className="inline-flex items-center gap-2 py-1 px-3 rounded-full border border-[var(--power-red)] text-[var(--power-red)] text-sm font-medium"
               variants={itemVariants}
             >
-              Data Science Council
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--power-red)] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--power-red)]"></span>
+              </span>
+              Registration Open • 2026
             </motion.div>
             
             <motion.h1 
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               variants={itemVariants}
             >
-              <span className="text-foreground">Data</span>
-              <span className="text-gradient">Zen</span>
+              <span className="text-foreground">DataZen</span>
+              <br />
+              <span className="text-gradient">Case Study Competition</span>
             </motion.h1>
             
             <motion.p 
               className="text-lg md:text-xl text-muted-foreground max-w-lg"
               variants={itemVariants}
             >
-              The official Data Science council of Somaiya Vidyavihar University, where we transform data into insights and create innovations that matter.
+              Put your data analysis and visualization skills to the test. Tackle real-world challenges in Finance, Healthcare, or Social Good, and win big!
             </motion.p>
             
             <motion.div 
-              className="flex flex-wrap gap-4 pt-4"
+              className="space-y-4 pt-4"
               variants={itemVariants}
             >
-              <a 
-                href="#about" 
-                className="px-8 py-3 bg-gradient-red text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center"
-              >
-                Discover
-              </a>
-              <a 
-                href="#activities" 
-                className="px-8 py-3 border-2 border-[var(--power-red)] text-[var(--power-red)] font-medium rounded-lg hover:bg-[var(--power-red)] hover:text-white transition-all duration-300 text-center"
-              >
-                Explore
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  to="/register" 
+                  className="inline-flex items-center px-8 py-3 bg-gradient-red text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                >
+                  Register Your Team
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <a 
+                  href="#about" 
+                  className="px-8 py-3 border-2 border-[var(--power-red)] text-[var(--power-red)] font-medium rounded-lg hover:bg-[var(--power-red)] hover:text-white transition-all duration-300 text-center"
+                >
+                  Learn More
+                </a>
+              </div>
+              <div className="flex items-center gap-6 text-sm text-muted-foreground pt-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-[var(--power-red)] font-bold text-xl">₹50,000</span>
+                  <span>Prize Pool</span>
+                </div>
+                <div className="h-4 w-px bg-border"></div>
+                <div>2-3 Members per Team</div>
+              </div>
             </motion.div>
           </motion.div>
           
@@ -229,7 +247,7 @@ export default function Hero() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 2.5, duration: 1 }}
                 >
-                  DATAZEN v2.0
+                  COMPETITION 2026
                 </motion.div>
               </div>
             </div>
