@@ -463,20 +463,6 @@ export default function Team() {
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-xl font-bold text-foreground">Filter by Team</h3>
             <div className="flex gap-2">
-              <button
-                onClick={() => handleScroll("left")}
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/15 transition-colors border border-primary/20"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="w-5 h-5 text-primary" />
-              </button>
-              <button
-                onClick={() => handleScroll("right")}
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/15 transition-colors border border-primary/20"
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-5 h-5 text-primary" />
-              </button>
             </div>
           </div>
 
