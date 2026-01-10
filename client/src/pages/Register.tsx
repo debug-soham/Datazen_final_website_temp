@@ -140,11 +140,11 @@ export default function Register() {
   const onSubmit = async (data: FormData) => {
     setSubmitAttempted(true);
     setIsSubmitting(true);
-    
+
     try {
       const response = await apiRequest("POST", "/api/register", data);
       const result = await response.json();
-      
+
       if (result.success) {
         setIsSuccess(true);
         toast({
@@ -287,7 +287,7 @@ export default function Register() {
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                   <Label>Email</Label>
-                                  <Input type="email" placeholder="leader@somaiya.edu" {...register("email")} className="bg-background/50" />
+                                  <Input type="email" placeholder="leader@example.com" {...register("email")} className="bg-background/50" />
                                   {errors.email && submitAttempted && <span className="text-xs text-red-500">{errors.email.message}</span>}
                                 </div>
                                 <div className="space-y-2">

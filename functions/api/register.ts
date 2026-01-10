@@ -8,10 +8,7 @@ const teamRegistrationSchema = z.object({
   teamSize: z.string().min(1),
   leaderName: z.string().min(2),
   leaderResume: z.string().url(),
-  email: z.string().email().refine(
-    (email) => email.endsWith("@somaiya.edu"),
-    "Only @somaiya.edu email addresses are allowed"
-  ),
+  email: z.string().email(),
   phone: z.string().min(10),
   members: z.array(z.object({
     name: z.string().min(2),
@@ -71,13 +68,13 @@ export async function onRequestPost(context: any) {
   try {
     const body = await context.request.json();
     const validatedData = teamRegistrationSchema.parse(body);
-    
+
     console.log('Registration request received:', {
       teamName: validatedData.teamName,
       college: validatedData.college,
       email: validatedData.email,
     });
-    
+
     const auth = await getAuth(context.env);
     if (!auth) {
       throw new Error('Failed to authenticate with Google Sheets');
@@ -132,7 +129,7 @@ export async function onRequestPost(context: any) {
     );
   } catch (error) {
     console.error('Registration error:', error instanceof Error ? error.message : String(error));
-    
+
     if (error instanceof z.ZodError) {
       return new Response(
         JSON.stringify({
@@ -146,7 +143,7 @@ export async function onRequestPost(context: any) {
         }
       );
     }
-    
+
     return new Response(
       JSON.stringify({
         success: false,

@@ -44,10 +44,7 @@ export const teamRegistrationSchema = z.object({
   teamSize: z.string().min(1, "Team size is required"),
   leaderName: z.string().min(2, "Leader name is required"),
   leaderResume: z.string().url("Valid Resume URL required (include https://)"),
-  email: z.string().email("Invalid email address").refine(
-    (email) => email.endsWith("@somaiya.edu"),
-    "Only @somaiya.edu email addresses are allowed"
-  ),
+  email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   members: z.array(z.object({
     name: z.string().min(2, "Member name is required"),
