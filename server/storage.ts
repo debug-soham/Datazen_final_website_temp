@@ -1,4 +1,4 @@
-import { users, contactMessages, type User, type InsertUser, type ContactMessage, type InsertContactMessage, type TeamRegistration } from "@shared/schema";
+import { users, contactMessages, type User, type InsertUser, type ContactMessage, type InsertContactMessage, type TeamRegistration } from "../shared/schema";
 
 // modify the interface with any CRUD methods
 // you might need

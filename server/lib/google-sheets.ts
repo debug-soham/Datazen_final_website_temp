@@ -1,5 +1,5 @@
 import { google } from 'googleapis';
-import { TeamRegistration, ContactMessage } from '@shared/schema';
+import { TeamRegistration, ContactMessage } from '../../shared/schema';
 import path from 'path';
 import fs from 'fs';
 
