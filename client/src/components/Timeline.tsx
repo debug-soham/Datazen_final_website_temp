@@ -49,7 +49,7 @@ export default function Timeline() {
      
     // },
     {
-      year: "17th January 2026",
+      year: "31th January 2026",
       title: "Case Study Competition",
       description: "A competition where the students analyze and visualize the data using Tableau, showcasing their skills in data storytelling and insights."
      
