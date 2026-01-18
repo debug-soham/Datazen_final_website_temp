@@ -200,13 +200,15 @@ export default function Hero() {
               variants={itemVariants}
             >
               <div className="flex flex-wrap gap-4">
-                <Link 
-                  to="/register" 
+                <a 
+                  href="https://luma.com/oeoz15qn" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-3 bg-gradient-red text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center"
                 >
                   Register Your Team
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
                 <a 
                   href="#about" 
                   className="px-8 py-3 border-2 border-[var(--power-red)] text-[var(--power-red)] font-medium rounded-lg hover:bg-[var(--power-red)] hover:text-white transition-all duration-300 text-center"
